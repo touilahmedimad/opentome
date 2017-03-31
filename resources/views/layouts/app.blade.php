@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Scripts -->
     <script>
@@ -45,10 +46,10 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">About Us</a></li>
+                            <li><a href="{{ route('login') }}">{{ __('messages.login')}}</a></li>
+                            <li><a href="{{ route('register') }}">{{ __('messages.register')}}</a></li>
+                            <li><a href="#">{{ __('messages.contact_us')}}</a></li>
+                            <li><a href="#">{{ __('messages.about_us')}}</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -56,12 +57,12 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="{{ route('profile') }}">Profile</a></li>
+                                    <li><a href="{{ route('profile') }}">{{ __('messages.profile')}}</a></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
+                                            {{ __('messages.logout')}}
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -70,8 +71,9 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">About Us</a></li>
+                            <li><a href="{{ route('messages') }}">{{ __('messages.messages')}}</a></li>
+                            <li><a href="#">{{ __('messages.contact_us')}}</a></li>
+                            <li><a href="#">{{ __('messages.about_us')}}</a></li>
                         @endif
                     </ul>
                 </div>

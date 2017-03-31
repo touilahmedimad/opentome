@@ -27,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/Messages';
 
     /**
      * Create a new controller instance.
@@ -48,9 +48,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
-            'bio' => 'required',
-            'username' => 'required|max:50|unique:users',
+            'name' => 'required|min:5|max:255',
+            'bio' => 'required|min:5',
+            'username' => 'required|max:50|unique:users|regex:/^[A-Za-z0-9]+$/|min:5',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
         ]);

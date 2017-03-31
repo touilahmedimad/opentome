@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $testimonials = Testimonial::paginate(10);
+        $testimonials = Testimonial::orderBy('created_at', 'desc')->paginate(10);
         return view('home')->with('testimonials', $testimonials);
     }
 }
