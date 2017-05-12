@@ -22,6 +22,9 @@
     </script>
 </head>
 <body>
+<script src="{{ asset('js/jquery-3.2.0.min.js') }}"></script>
+<script src="{{ asset('js/html2canvas.js') }}"></script>
+<script src="{{ asset('js/canvas2image.js') }}"></script>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
@@ -84,6 +87,7 @@
     </div>
 
     <!-- Scripts -->
+
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

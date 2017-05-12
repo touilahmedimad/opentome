@@ -4,13 +4,42 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
+        @if(session('status'))
+          <div class="alert alert-success">
+            {{ session('status') }}
+          </div>
+        @endif
         @foreach($testimonials as $testimonial)
           <div class="panel panel-default">
             <div class="panel-body">
-              <p><strong>{{$testimonial->pseudo}}</strong>&nbsp<small>{{ $testimonial->created_at->diffForHumans()}}</small></p>
-              <p class="text-justify">{{$testimonial->message}}</p>
-              <button class="btn btn-danger pull-right">{{ __('messages.delete') }}</button>
-              <button class="btn btn-info">{{ __('messages.share') }}</button>
+              <div id="widget{{$testimonial->id}}">
+                <p><strong>{{$testimonial->pseudo}}</strong>&nbsp<small>{{ $testimonial->created_at->diffForHumans()}}</small></p>
+                <p class="text-justify">{{$testimonial->message}}</p>
+              </div>
+              <button class="btn btn-danger pull-right" data-toggle="modal" href="#deletemodal{{$testimonial->id}}">{{ __('messages.delete') }}</button>
+              <div class="modal fade" id="deletemodal{{$testimonial->id}}">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title">Warning !</h4>
+                    </div>
+                    <div class="modal-body">
+                        <b>Are you sure you want to delete:</b>
+                      {{ $testimonial->message }}
+                    </div>
+                    <div class="modal-footer">
+                      <form action="{{ route('deleteTestimonial') }}" method="post">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <input type="hidden" value="{{$testimonial->id}}" name="id">
+                        <input type="hidden" name="_method" value="delete">
+                        {{ csrf_field() }}
+                        <button class="btn btn-danger">Yes</buttonl>
+                      </form>
+                    </div>
+                  </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+              </div><!-- /.modal -->
             </div>
           </div>
         @endforeach

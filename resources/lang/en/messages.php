@@ -27,4 +27,10 @@ return [
     'added_testimonial' => 'Testmonial Added Successfully',
     'delete' => 'Delete',
     'share' => 'Share',
+    //Testimonial
+    'deleted_testimonial'=> 'Testimonial Deleted Successfully',
+    //wrong
+    'wrong_password' => 'Wrong Password !',
+    'password_changed' => 'Password Has been changed',
+    'email_changed' => 'Email has been changed'
 ];

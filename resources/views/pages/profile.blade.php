@@ -51,6 +51,9 @@
             <label for="inputEmail3" class="col-sm-2 control-label">biographie</label>
             <div class="col-sm-10">
               <textarea type="text" class="form-control" id="inputEmail3" name="bio">{{ Auth::user()->bio }}</textarea>
+              <br/>
+              <p><a href="{{ route('Password') }}">Update Password</a></p>
+              <p><a href="{{ route('updateEmail') }}">Update Email</a></p>
               @if($errors->has('bio'))
                 <span class="help-block">
                   <strong>{{ $errors->first('bio')}} </strong>
