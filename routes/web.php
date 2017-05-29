@@ -28,7 +28,8 @@ Route::post('/postPassword', 'ProfileController@postPassword')->name('postPasswo
 Route::get('/updateEmail', 'ProfileController@email')->name('updateEmail');
 Route::post('/postEmail', 'ProfileController@postEmail')->name('postEmail');
 
-
+// Pages
+Route::get('page/{page}','PageController@index')->name('Page');
 
 
 

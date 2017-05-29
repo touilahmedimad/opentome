@@ -10,7 +10,6 @@
                 {{ session('status') }}
             </div>
                 @endif
-            </div>
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                             {!! Voyager::setting('home_text') !!}

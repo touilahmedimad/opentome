@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('title')
+    {{ __('messages.login') }}
+    @endsection
 @section('content')
 <div class="container">
     <div class="row">

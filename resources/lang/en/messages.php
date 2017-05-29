@@ -35,6 +35,8 @@ return [
     'email_changed' => 'Email has been changed',
     // Page Names
     'home' => 'Home',
+    'login' => 'Login',
+    'register' => 'Register',
     'update_password' => 'Update password',
     'update_email' => 'Update email'
 
