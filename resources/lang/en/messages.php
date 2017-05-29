@@ -32,5 +32,10 @@ return [
     //wrong
     'wrong_password' => 'Wrong Password !',
     'password_changed' => 'Password Has been changed',
-    'email_changed' => 'Email has been changed'
+    'email_changed' => 'Email has been changed',
+    // Page Names
+    'home' => 'Home',
+    'update_password' => 'Update password',
+    'update_email' => 'Update email'
+
 ];

@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+    {{ __('messages.update_password') }}
+    @endsection
 @section('content')
     <div class="container">
         @if(session('status_error'))

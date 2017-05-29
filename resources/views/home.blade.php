@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('title')
+  {{ __('messages.messages') }}
+  @endsection
 @section('content')
   <div class="container">
     <div class="row">
@@ -9,6 +11,13 @@
             {{ session('status') }}
           </div>
         @endif
+        @if($testimonials->isEmpty())
+          <div class="panel panel-default">
+            <div class="panel-body">
+              No Testimonials
+            </div>
+          </div>
+          @endif
         @foreach($testimonials as $testimonial)
           <div class="panel panel-default">
             <div class="panel-body">

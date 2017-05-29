@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+    {{ __('messages.home') }}
+    @endsection
 
 @section('content')
     <div class="container">
@@ -10,12 +13,7 @@
             </div>
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Touil Ahmed Imad</div>
-
-                        <div class="panel-body">
-                            You are a precious friend
-                        </div>
+                            {!! Voyager::setting('home_text') !!}
                     </div>
                 </div>
             </div>

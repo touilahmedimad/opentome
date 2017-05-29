@@ -27,3 +27,13 @@ Route::get('/Password', 'ProfileController@Password')->name('Password');
 Route::post('/postPassword', 'ProfileController@postPassword')->name('postPassword');
 Route::get('/updateEmail', 'ProfileController@email')->name('updateEmail');
 Route::post('/postEmail', 'ProfileController@postEmail')->name('postEmail');
+
+
+
+
+
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

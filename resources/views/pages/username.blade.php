@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+  {{ $user->name }} {{ __('messages.profile') }}
+  @endsection
 @section('content')
   <div class="container">
     <div class="row">
