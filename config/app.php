@@ -178,6 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         // Voyager
         TCG\Voyager\VoyagerServiceProvider::class,
+        RachidLaasri\LaravelInstaller\Providers\LaravelInstallerServiceProvider::class,
     ],
 
     /*
