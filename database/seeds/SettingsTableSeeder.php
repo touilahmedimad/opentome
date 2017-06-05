@@ -108,6 +108,16 @@ class SettingsTableSeeder extends Seeder
                 'order'        => 9,
             ])->save();
         }
+        $setting = $this->findSetting('home_text');
+        if (!$setting->exists) {
+            $setting->fill([
+                'display_name' => 'Home',
+                'value'        => 'Open To Me Home',
+                'details'      => '',
+                'type'         => 'rich_text_box',
+                'order'        => 10,
+            ])->save();
+        }
     }
 
     /**
