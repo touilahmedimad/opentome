@@ -88,7 +88,7 @@
     </div>
 <div class="container">
     <footer class="footer">
-        <span> Coded By: Touil Ahmed Imad</span>
+        <span> Coded By:<a href="https://github.com/touilahmedimad" target="_blank">Touil Ahmed Imad</a></span>
     </footer>
 </div>
     </div>
